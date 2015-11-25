@@ -62,6 +62,7 @@ public class WarmWeatherDB {
 
 	/*
 	 * 将数据库中所有省的信息读取出来，用List来存储省的信息
+	 * 这里返回的数据是用来填充listview的
 	 */
 	public List<Province> loadProvince() {
 		List<Province> list = new ArrayList<Province>();
@@ -97,7 +98,7 @@ public class WarmWeatherDB {
 	/*
 	 * 从数据库读取某省下所有城市信息
 	 */
-	public List<City> loadProvinces(int provinceId) {
+	public List<City> loadCities(int provinceId) {
 		List<City> list = new ArrayList<City>();
 
 		Cursor cursor = db.query("City", null, "province_id = ?",
